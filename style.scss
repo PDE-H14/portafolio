@@ -115,27 +115,12 @@ nav ul li a:hover{
 }
 
 .contenedor .widget{
-    position: relative;
-    min-height: 100px;
-    min-width: 90px;
-    max-height: 500px;
-    max-width: 450px;
-    background-color: white;
+    background: #123456;
+    color: #fff;
+    height: 100px;
     display: flex;
     align-items: center;
-    text-align: center;
     justify-content: center;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.contenedor .widget:hover{
-    transform: scale(1.009);
-    background-position: 100%  100%;
-    box-shadow: rgba(255,255,255,0.1) 0 1px 1px 0 inset,
-                rgba(50, 50, 93, 0.25)0 50px 100px -20px,
-                rgba(0,0,0,0.3) 0 30px 60px -30px;
 }
 
 .contenedor .pie-pagina{
@@ -234,50 +219,3 @@ nav ul li a:hover{
         grid-row: 4/5;
     }
 }
-
-
-
-/* ==================== CARD REFLEJO ==================== */
-.reflex{
-    position: relative;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 50%, var(--secondary-color) 70%, var(--third-color) 100%);
-    background-repeat: no-repeat;
-    background-size: 300% 300%;
-    cursor: pointer;
-    transition: 0.5s all;
-    display: block;
-}
-
-.reflex .img{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    mix-blend-mode: screen;
-    opacity: 0.9;
-}
-
-.reflex .img img{
-    position: relative;
-    height: 100%;
-    z-index: 3;
-}
-.reflex h2{
-   position: absolute;
-    transform: translateX(-38%) rotate(-90deg);
-    color: var(--secondary-color);
-    width: 100%;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.6s;
-    font-family: sans-serif;
-    font-size: 100%;
-    text-align: center;
-    line-height:1;
-}
-
-.reflex:hover h2{
-    opacity: 1;
-}
-/* ==================== CARD REFLEJO ==================== */

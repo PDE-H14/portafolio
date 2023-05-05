@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: #ededed;
+}
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 20px;
+}
+.container > *{
+    position: relative;
+    min-height: 100px;
+    min-width: 90px;
+    max-height: 500px;
+    max-width: 450px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container >  *:hover{
+    transform: scale(1.009);
+    background-position: 100%  100%;
+    box-shadow: rgba(255,255,255,0.1) 0 1px 1px 0 inset,
+                rgba(50, 50, 93, 0.25)0 50px 100px -20px,
+                rgba(0,0,0,0.3) 0 30px 60px -30px;
+}
+
+/* ==================== CARD ZOOM ==================== */
+.wrapper{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 5px solid #fff;
+}
+.wrapper img{
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+/*
+Necesita un double wrapper para que el borde circular se mantennga en esta ventana cuadrada, 
+en circular no es necesario
+*/
+
+.wrapper img:hover{
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+/* ==================== CARD ZOOM ==================== */
+
+/* ==================== CARD REFLEJO ==================== */
+.c12{
+    position: relative;
+    background: linear-gradient(135deg, black 0%, #f27906 50%, black 70%, #ffc700 100%);
+    background-repeat: no-repeat;
+    background-size: 300% 300%;
+    cursor: pointer;
+    transition: 0.5s all;
+    display: block;
+}
+
+.c12 .img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: screen;
+    opacity: 0.9;
+}
+.c12 h2{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-91%, -400%) rotate(-90deg);
+    color: #1e1e1e;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.6s;
+    font-family: sans-serif;
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+    line-height: 0.85;
+}
+
+.c12:hover h2{
+    opacity: 1;
+}
+/* ==================== CARD REFLEJO ==================== */
+
+/* ==================== CARD NEON ==================== */
+
+.c21{
+    background-color: #f27906;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    overflow: visible;
+    border-radius: 1px;
+}
+
+.c21::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(315deg, #f27906, #ffc700);
+    margin: 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.c21::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, #f27906, #ffc700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    filter: blur(20px);
+}
+.c21 b {
+    position: absolute;
+    inset: 6px;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+.c21 img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    opacity: 0.25;
+    transition: 0.5s;
+}
+.c21:hover img{
+    position: relative;
+    z-index: 3;
+    transform: scale(0.8) translateY(-10%);
+    opacity: 0.9;
+}
+
+.c21 .content {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    flex-direction: column;
+    transition: 0.5s;
+    transform: scale(0);
+}
+
+.c21:hover .content{
+    position: absolute;
+    transform: scale(1);
+    bottom: 5%;
+    z-index: 3;
+}
+
+.c21 .content h3{
+    position: relative;
+    color: white;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.c21 .content h3 span{
+    font-weight: 300;
+    font-size: 0.75em;
+}
+
+.sci{
+    border-top: solid 1px #ededed;
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+.sci li{
+    list-style: none;
+}
+.sci li a{
+    text-decoration: none;
+    position: relative;
+    color: rgba(255,255,255,0.5);
+    width: 10%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.sci li a#li:hover{
+    color: rgba(14, 118, 168, 0.9);
+}
+
+.sci li a#git:hover{
+    color: rgba(23, 21, 21, 0.9);
+}
+.sci li a#ig:hover{
+    color: rgba(255,255,255,0.9);
+}
+
+.sci li a#yt:hover{
+    color: rgba(196, 48, 43, 0.9);
+}
+/* ==================== CARD NEON ==================== */
+
+/* ==================== CARD Rotable ==================== */
+
+.c22{
+    
+    background: transparent;
+}
+.c22 .card{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.c22 .card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: 0.75s;
+}
+
+.c22 .card .front{
+    position: relative;
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+.c22 .card .front img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.c22 .card .front h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.c22 .card .back{
+    transform: perspective(600px) rotateY(180deg);
+    background: #ededed;
+    padding: 15px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+} 
+
+.c22 .back h3{
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.c22 .back p{
+    margin: 20px;
+    letter-spacing: 1px;
+}
+
+.card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+/* ==================== CARD Rotable ==================== */
+
+
+@media screen and (max-width: 768px){
+    .container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
